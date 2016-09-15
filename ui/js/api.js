@@ -63,7 +63,7 @@ var Api = (function() {
 
  function wsConnect() {
             //console.log("connect",wsUri);
-            mysocket = new WebSocket('ws://NODEREDINSTANCE.mybluemix.net/blinkupdate'); ###Adjust the servername
+            mysocket = new WebSocket('ws://NODEREDINSTANCE.mybluemix.net/blinkupdate'); //###Adjust the servername
             mysocket.onmessage = function(msg) {
                var data = null;
 			  data = JSON.parse( msg.data );
