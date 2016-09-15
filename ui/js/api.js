@@ -55,27 +55,15 @@ var Api = (function() {
   //  postConversationMessage('Update'); // user messahe
      wsConnect();
     
-/* WebSocket
-mysocket = new WebSocket( 'ws://wownr.mybluemix.net/blinkupdate');  
-mysocket.addEventListener( 'message', doSocketMessage );
-mysocket.addEventListener( 'message', doSocketMessage );
-// Message
-function doSocketMessage( message ) {  
-  var data = null;
-
-  // Parse
-  data = JSON.parse( message.data );
-  console.log("ws data received"+data);
-  //displayMessage({'output': { 'text': data.d.text}},authorTypes.watson);
-   Api.setWatsonPayload({output: {text: [  data.d.text ]}});
-}
-
+/* 
+//WebSocket
+// mvk
 */
 }
 
  function wsConnect() {
             //console.log("connect",wsUri);
-            mysocket = new WebSocket('ws://wownr.mybluemix.net/blinkupdate');
+            mysocket = new WebSocket('ws://NODEREDINSTANCE.mybluemix.net/blinkupdate'); ###Adjust the servername
             mysocket.onmessage = function(msg) {
                var data = null;
 			  data = JSON.parse( msg.data );
