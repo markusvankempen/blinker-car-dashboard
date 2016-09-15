@@ -26,7 +26,7 @@ var uuid = require ( 'uuid' );
 var csv = require ( 'express-csv' );
 var vcapServices = require ( 'vcap_services' );
 var basicAuth = require ( 'basic-auth-connect' );
-var WebSocket = require('ws');
+
 
 
 //The app owner may optionally configure a cloudand db to track user input.
@@ -48,19 +48,18 @@ var app = express ();
 
 
 var mqtt = require('mqtt');
-
+//
+// ##ADjust IOT information
+//
 var mqttClient = null;
 var mqttConfig = {
   deviceId : "speech",
   deviceType : "watson",
-  apiToken : "w8n3C&STXc0vanGkWX",
-  orgId : "b27ymc",
+  apiToken : "YOURTOKEN", //TOKEN
+  orgId : "YOURORG",  // ORG
   port : "1883"
 };
 
- 	   var ws;
-       var wsUri  = "ws://YOURNODEREDISNTANCE.mybluemix.net/ws/simple";        //###adjust servername
-      
 app.use ( compression () );
 app.use ( bodyParser.json () );
 //static folder containing UI
@@ -74,41 +73,6 @@ var conversation = watson.conversation ( {
   version: 'v1'
 } );
 
- function wsConnect() {
-            console.log("connect",wsUri);
-            ws = new WebSocket(wsUri);
-            //var line = "";    // either uncomment this for a building list of messages
-            ws.onmessage = function(msg) {
-                var line = "";  // or uncomment this to overwrite the existing message
-                // parse the incoming message as a JSON object
-                var data = msg.data;
-                console.log("WS on message="+data);
-                }
-            ws.onopen = function() {
-                // update the status div with the connection status
-        
-                ws.send("Open for data");
-                console.log("ws connected");
-            }
-            ws.onclose = function() {
-                // update the status div with the connection status
-               //ws.send("Open for data");
-                console.log("ws closed");
-                // in case of lost connection tries to reconnect every 3 secs
-                setTimeout(wsConnect,3000);
-            }
-        }
-        
-        function doit(m) {
-            if (!ws) {
-            			wsConnect();
-            		}else{
-          	  			ws.send(m);
-          	  			console.log("ws sending  convo data ");
-          	  		//	console.log("ws sending = "+m);
-            	}
-        }
-        
 // Endpoint to be call from the client side
 app.post ( '/api/message', function (req, res) {
   if ( !workspace_id || workspace_id === '<workspace-id>' ) {
@@ -137,9 +101,6 @@ app.post ( '/api/message', function (req, res) {
   });
 
  if (mqttClient) {
- 	
- 	
-  
  	console.log("Send  mqtt start msg  ");
     mqttClient.publish('iot-2/evt/waconvo/fmt/json', JSON.stringify({
       "value" : "Starting Up"
@@ -184,9 +145,6 @@ var	myData = JSON.parse(message);
       "input" : req.body.input
     }), function () {
     }); 
-    
-    doit( JSON.stringify({"input" : req.body.input})); //send websocket message
-    
   }
   // Send the input to the conversation service
   conversation.message ( payload, function (err, data) {
@@ -210,12 +168,7 @@ var	myData = JSON.parse(message);
     }), function () {
     }); 
     
-    
-        doit( JSON.stringify({
-      "convo" : "result",
-     '_id': id, 'request': payload, 'response': data, 'time': new Date ()
-    })); //send websocket message
-    
+
   }
     return res.json ( data );
     
