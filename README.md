@@ -1,6 +1,4 @@
-# Conversation Car Dashboard Demo Application
-[![Build Status](https://travis-ci.org/watson-developer-cloud/car-dashboard.svg?branch=master)](http://travis-ci.org/watson-developer-cloud/car-dashboard)
-[![codecov.io](https://codecov.io/github/watson-developer-cloud/conversation-simple/coverage.svg?branch=master)](https://codecov.io/github/watson-developer-cloud/car-dashboard?branch=master)
+### BLINKER MODs mvk20160914
 
 
 This application demonstrates how the Conversation service uses intent capabilities in an animated car dashboard UI.
@@ -43,7 +41,7 @@ understands that in both cases your intent is the same and responds accordingly.
 ## Deploy the App
 1 Click this button to Deploy to Bluemix.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/watson-developer-cloud/car-dashboard)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; [![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/markusvankempen/blinker-car-dashboard)
 
 2 Log in with an existing Bluemix account or sign up.
 
