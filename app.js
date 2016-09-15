@@ -59,7 +59,7 @@ var mqttConfig = {
 };
 
  	   var ws;
-       var wsUri  = "ws://wownr.mybluemix.net/ws/simple";       
+       var wsUri  = "ws://YOURNODEREDISNTANCE.mybluemix.net/ws/simple";        //###adjust servername
       
 app.use ( compression () );
 app.use ( bodyParser.json () );
