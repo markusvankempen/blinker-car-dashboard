@@ -11,7 +11,7 @@ InternetButton b = InternetButton();
 /*
 // IOT INFOS
 */
-char *IOT_CLIENT= "d:YOUR:InternetButton:IButton"; // ###UPDATE
+char *IOT_CLIENT= "d:YOUR:photon:blinker"; // ###UPDATE
 char *IOT_HOST     = "YOUR.messaging.internetofthings.ibmcloud.com"; //##UPDATE
 char *IOT_PASSWORD = "YOURTOCKEN"; //##UPDATE
 char *IOT_PUBLISH  = "iot-2/evt/count/fmt/json"; 
