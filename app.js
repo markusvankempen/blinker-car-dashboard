@@ -48,9 +48,10 @@ var app = express ();
 
 
 var mqtt = require('mqtt');
-//
-// ##ADjust IOT information
-//
+/*
+****** ##ADjust IOT information
+
+*/
 var mqttClient = null;
 var mqttConfig = {
   deviceId : "speech",
