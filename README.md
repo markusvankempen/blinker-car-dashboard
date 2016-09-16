@@ -1,5 +1,5 @@
 ### BLINKER MODs mvk20160914
-
+app.js - added mqtt client , api.js added websocket client, 
 
 This application demonstrates how the Conversation service uses intent capabilities in an animated car dashboard UI.
 
