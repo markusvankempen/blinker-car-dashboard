@@ -13,7 +13,7 @@ InternetButton b = InternetButton();
 */
 char *IOT_CLIENT= "d:YOUR:photon:blinker"; // ###UPDATE
 char *IOT_HOST     = "YOUR.messaging.internetofthings.ibmcloud.com"; //##UPDATE
-char *IOT_PASSWORD = "YOURTOCKEN"; //##UPDATE
+char *IOT_PASSWORD = "YOURTOKEN"; //##UPDATE
 char *IOT_PUBLISH  = "iot-2/evt/count/fmt/json"; 
 char *IOT_PUBLISH_CMD = "iot-2/evt/status/fmt/json"; 
 char *IOT_PUBLISH_ALIVE = "iot-2/evt/alive/fmt/json"; 
