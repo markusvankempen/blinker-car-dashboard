@@ -28,6 +28,7 @@ var Sidebar = (function() {
   };
 
   var suggestions = [
+    'Turn on blinker',
     'Turn on the headlights',
     'Shut off my lights',
     'Play some music',
