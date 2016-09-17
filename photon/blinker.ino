@@ -171,7 +171,6 @@ if (now-lastTime>5000UL) {
  }// loop
 
 void callback( char* topic, byte* payload, unsigned int length ) { 
- // heartbeat on - that way even if we are the same color we know it's running
 
     char p[length + 1];
     memcpy(p, payload, length);
